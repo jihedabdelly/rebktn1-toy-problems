@@ -24,5 +24,5 @@ var firstNonRepeatedCharacter = function(string) {
   	
   }
 
-  return "All chars are repeated"
+  return "All chars are repeated";
 };
