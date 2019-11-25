@@ -5,15 +5,21 @@
  *   firstNonRepeatedCharacter('ABA'); // => 'B'
  *   firstNonRepeatedCharacter('AACBDB'); // => 'C'
  */
-
+function count(char,str) {
+	var num = 0;
+	for (var i =0;i<str.length;i++) {
+		if (str[i] === char) {
+			num++
+		}
+	}
+	return num;
+}
 var firstNonRepeatedCharacter = function(string) {
   // TODO: your solution here
   
   for (var i = 0; i < string.length; i++) {
-  	var char = string[i];
-  	var rest = string.slice(i+1)
-  	if(rest.indexOf(char) === -1) {
-  		return char;
+  	if(count(string[i],string) === 1) {
+  		return string[i];
   	}
   	
   }
