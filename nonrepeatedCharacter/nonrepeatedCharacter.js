@@ -8,4 +8,15 @@
 
 var firstNonRepeatedCharacter = function(string) {
   // TODO: your solution here
+  
+  for (var i = 0; i < string.length; i++) {
+  	var char = string[i];
+  	var rest = string.slice(i+1)
+  	if(rest.indexOf(char) === -1) {
+  		return char;
+  	}
+  	
+  }
+
+  return "All chars are repeated"
 };
