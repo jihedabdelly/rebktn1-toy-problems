@@ -11,7 +11,47 @@
  */
 
 
-
+// This works for two strings
 var commonCharacters = function(string1, string2) {
   // TODO: Your code here!
+  var obj = {};
+  var finalStr="";
+
+  for(var i = 0; i < string1.length; i++) {
+  	if(string2.indexOf(string1[i]) !== -1) {
+  		obj[string1[i]] = true;
+  	} else {
+  		obj[string1[i]] = false;
+  	}
+  }
+
+  for(var i = 0; i < string1.length; i++) {
+  	if(obj[string1[i]] === true) {
+  		finalStr += string1[i]
+  	}
+  }
+
+  return finalStr;
 };
+
+
+//This works for more strings
+var multipleStrArgs = function(...args) {
+	//var args = Object.values(arguments);
+    var finalStr="";
+
+    for(var i = 0; i < args[0].length; i++) {
+    	var count = 0;
+    	for(var j = 1; j < args.length ; j++) {
+    		if(args[j].indexOf(args[0][i]) !== -1) {
+    			count++
+    		}
+    	}
+
+    	if(count === args.length - 1) {
+    		finalStr += args[0][i]
+    	}
+    }
+
+    return finalStr;
+}
