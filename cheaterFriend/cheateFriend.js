@@ -17,3 +17,34 @@
 //
 // Example:
 // removNb(26) should return [ {15, 21}, {21, 15} ]
+
+function fullSum(number) {
+	var sum = 0;
+	for(var i = 0; i < number + 1; i++) {
+		sum += i;
+	}
+	return sum;
+}
+
+function removNb(number) {
+	var finalArr = [];
+	for(var i = 1; i <= number; i++) {
+		var str= "";
+		//var num = i;
+		for(var j = 1; j <= number; j++) {
+			if(i === j) {                               ////// if i = j we only remove i (which is j)
+				if (i*j === fullSum(number) - i) {      //////
+					str = i + " and " + j;
+					finalArr.push(str);
+				}
+			} else {                                   ////// if i != j we remove both i and j
+				if (i*j === fullSum(number) - i -j) {  ////// 
+					str = i + " and " + j;
+					finalArr.push(str)
+				}
+			}
+		}
+	}
+
+	return finalArr;
+}
