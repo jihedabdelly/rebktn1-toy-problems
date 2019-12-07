@@ -20,3 +20,54 @@ x will always be a positive integer, and s will never be empty
 
 
 */
+
+function pairsOfBears(num, string) {
+	var finalStr = "";
+	var len = string.length;
+	var i = 0;
+
+	while(i < len -1) {
+		if(string[i] === "B") {
+			if(string[i+1] === "8") {
+				finalStr += "B8";
+				i ++;
+			}
+		}
+		if(string[i] === "8") {
+			if(string[i+1] === "B") {
+				finalStr += "8B";
+				i ++
+			}
+		}
+		i++
+	}
+
+	var bool = finalStr.length/2 >= num;
+
+	return [finalStr, bool]; 
+}
+
+// An attempt with regular exp
+
+function bearsPairs(num, string) {
+	var str = "";
+
+	var ndx1 = string.search(/B8/);
+	var ndx2 = string.search(/8B/);
+
+	if(!string.includes("8B") && !string.includes("B8")) {
+		return [str, str.length/2 >= num]
+	}
+
+	if(ndx1<ndx2) {
+		str += string.slice(string[ndx1], string[ndx1]+2)
+		return bearsPairs[num, string.slice(ndx1)]
+	} else if (ndx1>ndx2) {
+		str += string.slice(string[ndx2], string[ndx2]+2)
+		return bearsPairs[num, string.slice(ndx2)]
+	}
+	
+	
+
+	
+}
