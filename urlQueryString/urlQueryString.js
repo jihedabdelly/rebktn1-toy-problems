@@ -24,7 +24,7 @@ function parseQueryString(url) {
 	url = url.slice(ndxInter+1);
 	//make an array query that take all queries splitted by &
 	var query = url.split("&");
-	//push inside fianlArr the key-value pairs
+	//push inside fianlArr the key-value pairs  
 	for(var i = 0;i<query.length;i++) {
 		finalArr.push(query[i].split("="))
 	}
