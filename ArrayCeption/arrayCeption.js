@@ -20,6 +20,7 @@
 
 function inception(array) {
 	var str = JSON.stringify(array);
+	
 	while(str.includes("[]")) {
 		str = str.replace("[]","")
 	}
