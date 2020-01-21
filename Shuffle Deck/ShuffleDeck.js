@@ -63,7 +63,7 @@ function otherShuffleDeck(deck) {
 
 	for (var i = 0; i < deck.length; i++) {
 		var rand = Math.floor(Math.random() * deck.length);
-		if(newDeck[rand] === undefined) {
+		if(newDeck[rand] !== deck[i]) {
 			newDeck[i]= deck[rand]
 		} else {
 			i--
