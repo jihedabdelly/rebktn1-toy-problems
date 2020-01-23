@@ -58,16 +58,18 @@ function numberToEnglish(number) {
   var str = JSON.stringify(number);
   var length = str.length;
   var output = "";
-  var range = Math.ceil(number/3);
-  for (var i = 0; i < range; i++) {
-  	
+  
+  var firstPart = length - Math.floor(length/3);
+  var secondPart = Math.floor(length/3);
+  output += onlyHundreds(JSON.parse(str.slice(0, firstPart))) + numbersToPlace[10**secondPart]
+  for (var i = 0; i < secondPart; i=i+3) {
+  	var 
   }
 
   function onlyHundreds(number) {
   	var output = "";
   	var str = JSON.stringify(number);
   	var length = str.length;
-
 
   	if(length <= 2 && number <= 20) {
 	  	output = numbersToWords[number] 
