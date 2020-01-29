@@ -16,7 +16,7 @@ powerSet("a") // [ "", "a" ]
 powerSet("ab") // [ "", "a", "ab", "b" ]
 powerSet("obama") // [ "", "a", "ab", "abm", "abmo", "abo", "am", "amo", "ao", "b", "bm", "bmo", "bo", "m", "mo", "o" ]
 powerSet("horse") // [ "", "e", "eh", "eho", "ehor", "ehors", "ehos", "ehr", "ehrs", "ehs", "eo", "eor", "eors", "eos", "er", "ers", "es", "h", "ho", "hor", "hors", "hos", "hr", "hrs", "hs", "o", "or", "ors", "os", "r", "rs", "s" ]
-*/
+     ['e','h','o','r','s']      */
 
 function powerSet(string) {
   // your code here...
@@ -27,6 +27,13 @@ function powerSet(string) {
   	}
   } 
   chars=chars.sort();
-  return chars
 
+  function randWord(arrOfChars, length) {
+  	var word = "";
+
+  }	
+
+  if(chars.length===1) {
+  	return
+  }
 }
