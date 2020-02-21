@@ -1,4 +1,5 @@
-// Bubble sort is considered the most basic sorting algorithm in Computer Science. It works by starting at the first element of an array and comparing it to the second element:
+// Bubble sort is considered the most basic sorting algorithm in Computer Science.
+// It works by starting at the first element of an array and comparing it to the second element:
 
 // If the first element is greater than the second element, it swaps the two.
 // It then compares the second to the third, and the third to the fourth, and so on.
@@ -17,6 +18,7 @@
 
 // DONE
 
+<<<<<<< HEAD
 var swap = function(arr,ndx1,ndx2) {
 	var temp = arr[ndx1];
 	if(arr[ndx1] > arr[ndx2]) {
@@ -47,3 +49,36 @@ var bubbleSort = function(array) {
 
   return bubbleSort(array) 
 };
+=======
+
+
+
+
+
+
+[1, 2, 4, 3]
+
+
+const bubbleSort = (input, index = 0) => {
+    if (index === input.length - 1) {
+      return input;
+    }
+    
+    function inner (input, index = 0) {
+      if (index === input.length - 1) {
+        return;
+      }
+      if (input[index] > input[index + 1]) {
+        let temp = input[index + 1];
+        input[index + 1] = input[index];
+        input[index] = temp;
+      }
+      inner(input, ++index)
+    }
+
+    inner(input);
+    return bubbleSort(input, ++index);
+  }
+
+  console.log(bubbleSort([20, -10, -10, 2, 4, 299]))
+>>>>>>> 29427cac5b44b01e96e97f633bc0388b9d079355
